@@ -7,12 +7,10 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState('');
 
   const navigationItems = [
-    { href: '#home', label: 'Home' },
+    { href: '#home', label: 'About' },
     { href: '#experience', label: 'Experience' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#education', label: 'Education' },
     { href: '#projects', label: 'Projects' },
-    { href: '#publications', label: 'Publications' },
+    { href: '#publications', label: 'Writing' },
     { href: '#contact', label: 'Contact' }
   ];
 
@@ -57,10 +55,10 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
-      <div className="container mx-auto px-4 py-4">
+    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 dark:bg-gray-900/95 dark:border-gray-800 z-50">
+      <div className="container mx-auto px-4 py-4 max-w-4xl">
         <div className="flex items-center justify-between">
-          <div className="font-bold text-xl text-primary">
+          <div className="font-bold text-xl text-gray-900 dark:text-white">
             Saumitra Kulkarni
           </div>
           
@@ -70,13 +68,13 @@ const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`nav-link text-slate-600 hover:text-primary transition-colors relative ${
-                  activeSection === item.href.substring(1) ? 'text-primary' : ''
+                className={`text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative ${
+                  activeSection === item.href.substring(1) ? 'text-blue-600 dark:text-blue-400' : ''
                 }`}
               >
                 {item.label}
                 {activeSection === item.href.substring(1) && (
-                  <span className="absolute bottom-[-5px] left-0 w-full h-0.5 bg-primary"></span>
+                  <span className="absolute bottom-[-5px] left-0 w-full h-0.5 bg-blue-600 dark:bg-blue-400"></span>
                 )}
               </button>
             ))}
@@ -96,7 +94,7 @@ const Navigation = () => {
       
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 h-full w-64 bg-white shadow-lg md:hidden z-40">
+        <div className="fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg md:hidden z-40">
           <div className="p-4">
             <Button
               variant="ghost"
@@ -111,7 +109,7 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 text-slate-600 hover:text-primary transition-colors"
+                  className="block w-full text-left py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   {item.label}
                 </button>

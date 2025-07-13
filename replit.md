@@ -2,11 +2,25 @@
 
 ## Overview
 
-This is a personal portfolio website built as a full-stack application showcasing professional experience, education, skills, projects, and publications. The application is structured as a modern web app with a React frontend and Express backend, featuring a clean, responsive design using shadcn/ui components.
+This is a personal portfolio website built as a full-stack application showcasing Saumitra Kulkarni's professional experience, projects, and publications. The application is structured as a modern web app with a React frontend and Express backend, featuring a clean, minimalist design inspired by Tania Rascia's portfolio using shadcn/ui components.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Design preference: Clean, minimalist layout similar to Tania Rascia's portfolio.
+
+## Recent Changes (January 2025)
+
+- Redesigned entire portfolio to match Tania Rascia's clean, minimalist style
+- Simplified navigation to focus on core sections: About, Experience, Projects, Writing, Contact
+- Removed skills and education sections for cleaner presentation
+- Updated color scheme to modern blue-gray palette with proper dark mode support
+- Streamlined hero section with clean typography and minimal buttons
+- Redesigned experience section with left border timeline style
+- Updated projects section with GitHub/demo links and card-based layout
+- Simplified publications section (renamed to "Writing") with article-style presentation
+- Consolidated contact section with inline contact info and activities
+- Updated global styles for better typography and spacing
 
 ## System Architecture
 
