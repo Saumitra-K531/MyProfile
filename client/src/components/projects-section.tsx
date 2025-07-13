@@ -37,25 +37,25 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-slate-50">
+    <section id="projects" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Projects</h2>
-          <p className="text-lg text-slate-600">Notable projects and technical achievements</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Projects</h2>
+          <p className="text-lg text-gray-400">Notable projects and technical achievements</p>
         </div>
         
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={project.id} className="project-card bg-white p-6 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div key={project.id} className="project-card bg-gray-900 border border-gray-700 p-6 rounded-lg hover:shadow-xl hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center mb-4">
                   <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 ${getIconColor(index)}`}>
                     {getIcon(project.icon)}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-800">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
                 </div>
                 
-                <p className="text-slate-600 mb-4">{project.description}</p>
+                <p className="text-gray-300 mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies?.map((tech, i) => (
@@ -65,7 +65,7 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 
-                <div className="flex items-center gap-2 text-sm text-slate-500">
+                <div className="flex items-center gap-2 text-sm text-gray-400">
                   <TrendingUp className="w-4 h-4" />
                   <span>{project.features?.[0] || 'Feature Highlight'}</span>
                 </div>

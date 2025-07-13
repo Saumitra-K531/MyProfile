@@ -9,7 +9,7 @@ import ContactSection from '@/components/contact-section';
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-900">
       <Navigation />
       <HeroSection />
       <ExperienceSection />

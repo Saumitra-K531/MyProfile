@@ -23,11 +23,11 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Work Experience</h2>
-          <p className="text-lg text-slate-600">5+ years of professional software development experience</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Work Experience</h2>
+          <p className="text-lg text-gray-400">5+ years of professional software development experience</p>
         </div>
         
         <div className="max-w-4xl mx-auto">
@@ -39,35 +39,41 @@ const ExperienceSection = () => {
                     {getIcon(exp.icon)}
                   </div>
                   <div className="ml-6">
-                    <h3 className="text-xl font-bold text-slate-800">{exp.position}</h3>
-                    <p className={`font-semibold text-purple-600`}>
+                    <h3 className="text-xl font-bold text-white">{exp.position}</h3>
+                    <p className={`font-semibold text-purple-400`}>
                       {exp.company}
                     </p>
-                    <p className="text-slate-500">{exp.startDate} - {exp.endDate}</p>
+                    <p className="text-gray-400">{exp.startDate} - {exp.endDate}</p>
                   </div>
                 </div>
                 
-                <div className="ml-18 bg-slate-50 p-6 rounded-lg">
-                  <p className="text-slate-700 mb-4">{exp.description}</p>
+                <div className="ml-18 bg-gray-800 p-6 rounded-lg border border-gray-700">
+                  <p className="text-gray-300 mb-6">{exp.description}</p>
                   
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-3">
-                      {exp.achievements?.slice(0, Math.ceil(exp.achievements.length / 2)).map((achievement, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                          <p className="text-sm text-slate-600">{achievement}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="space-y-3">
-                      {exp.achievements?.slice(Math.ceil(exp.achievements.length / 2)).map((achievement, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                          <p className="text-sm text-slate-600">{achievement}</p>
+                  <div className="space-y-3">
+                    <h4 className="text-lg font-semibold text-purple-400 mb-4">Key Achievements</h4>
+                    <div className="grid gap-3">
+                      {exp.achievements?.map((achievement, i) => (
+                        <div key={i} className="flex items-start gap-3 p-3 bg-gray-700/50 rounded-lg border-l-4 border-purple-500">
+                          <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                          <p className="text-gray-300 leading-relaxed">{achievement}</p>
                         </div>
                       ))}
                     </div>
                   </div>
+                  
+                  {exp.technologies && (
+                    <div className="mt-6 pt-4 border-t border-gray-600">
+                      <h4 className="text-sm font-semibold text-purple-400 mb-3">Technologies Used</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech, i) => (
+                          <span key={i} className="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm border border-purple-600/30">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

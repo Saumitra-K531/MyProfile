@@ -12,14 +12,14 @@ Design preference: Clean, minimalist layout similar to Tania Rascia's portfolio.
 ## Recent Changes (January 2025)
 
 - Reverted to original comprehensive portfolio design at user's request
-- Applied new purple-themed color scheme with gradient accents
-- Updated hero section with professional avatar placeholder and purple/pink gradient theme
-- Restored skills and education sections with enhanced layouts
-- Redesigned experience section with timeline style and colorful icons
-- Updated projects section with card-based layout and colored tech tags
-- Enhanced publications section with modern styling and color-coded keywords
-- Redesigned contact section with icon-based contact cards and co-curricular activities
-- Added CSS animations (fade-in, slide-up, scale-in) for better user experience
+- Applied dark theme with purple accent colors throughout the design
+- Updated hero section with user's professional photo and dark gradient background
+- Enhanced experience section with better bullet point design using bordered cards and grouped achievements
+- Restored skills section with star rating system (1-5 stars) for skill proficiency levels
+- Applied dark theme to all sections (navigation, experience, skills, education, projects, publications, contact)
+- Updated color scheme: dark gray backgrounds with purple/pink accents
+- Improved visual hierarchy with better contrast and hover effects
+- Enhanced user experience with smooth animations and transitions
 - Updated navigation with all sections restored (Home, Experience, Skills, Education, Projects, Publications, Contact)
 
 ## System Architecture

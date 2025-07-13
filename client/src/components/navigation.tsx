@@ -57,10 +57,10 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="font-bold text-xl text-purple-600">
+          <div className="font-bold text-xl text-purple-400">
             Saumitra Kulkarni
           </div>
           
@@ -70,13 +70,13 @@ const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`nav-link text-slate-600 hover:text-purple-600 transition-colors relative ${
-                  activeSection === item.href.substring(1) ? 'text-purple-600' : ''
+                className={`nav-link text-gray-300 hover:text-purple-400 transition-colors relative ${
+                  activeSection === item.href.substring(1) ? 'text-purple-400' : ''
                 }`}
               >
                 {item.label}
                 {activeSection === item.href.substring(1) && (
-                  <span className="absolute bottom-[-5px] left-0 w-full h-0.5 bg-purple-600"></span>
+                  <span className="absolute bottom-[-5px] left-0 w-full h-0.5 bg-purple-400"></span>
                 )}
               </button>
             ))}
@@ -86,7 +86,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden text-gray-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
@@ -96,12 +96,12 @@ const Navigation = () => {
       
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 h-full w-64 bg-white shadow-lg md:hidden z-40">
+        <div className="fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-lg md:hidden z-40">
           <div className="p-4">
             <Button
               variant="ghost"
               size="icon"
-              className="absolute top-4 right-4"
+              className="absolute top-4 right-4 text-gray-300"
               onClick={() => setIsMenuOpen(false)}
             >
               <X />
@@ -111,7 +111,7 @@ const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 text-slate-600 hover:text-purple-600 transition-colors"
+                  className="block w-full text-left py-2 text-gray-300 hover:text-purple-400 transition-colors"
                 >
                   {item.label}
                 </button>

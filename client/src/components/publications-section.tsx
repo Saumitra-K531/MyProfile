@@ -13,37 +13,37 @@ const PublicationsSection = () => {
   };
 
   return (
-    <section id="publications" className="py-20 bg-white">
+    <section id="publications" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Publications</h2>
-          <p className="text-lg text-slate-600">Research contributions and technical papers</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Publications</h2>
+          <p className="text-lg text-gray-400">Research contributions and technical papers</p>
         </div>
         
         <div className="max-w-4xl mx-auto">
           {publications.map((publication) => (
-            <div key={publication.id} className="bg-slate-50 p-8 rounded-lg hover:shadow-lg transition-shadow animate-scale-in">
+            <div key={publication.id} className="bg-gray-800 border border-gray-700 p-8 rounded-lg hover:shadow-lg hover:border-purple-500/50 transition-all animate-scale-in">
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <FileText className="text-white text-2xl" />
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                  <h3 className="text-2xl font-bold text-white mb-2">
                     {publication.title}
                   </h3>
                   
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-purple-600 font-semibold">Authors:</span>
-                    <span className="text-slate-600">{publication.authors?.join(', ')}</span>
+                    <span className="text-purple-400 font-semibold">Authors:</span>
+                    <span className="text-gray-300">{publication.authors?.join(', ')}</span>
                   </div>
                   
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-purple-600 font-semibold">Published in:</span>
-                    <span className="text-slate-600">{publication.journal}</span>
+                    <span className="text-purple-400 font-semibold">Published in:</span>
+                    <span className="text-gray-300">{publication.journal}</span>
                   </div>
                   
-                  <p className="text-slate-700 mb-6">{publication.description}</p>
+                  <p className="text-gray-300 mb-6">{publication.description}</p>
                   
                   <div className="flex flex-wrap gap-2">
                     {publication.keywords?.map((keyword, i) => (
