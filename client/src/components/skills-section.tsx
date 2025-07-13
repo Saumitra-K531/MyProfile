@@ -1,4 +1,3 @@
-import { Star } from 'lucide-react';
 import { skills } from '@/lib/portfolio-data';
 
 const SkillsSection = () => {
@@ -12,32 +11,6 @@ const SkillsSection = () => {
       'Tools': 'bg-indigo-900/20 text-indigo-300 border-indigo-500/30'
     };
     return colorMap[category] || 'bg-gray-900/20 text-gray-300 border-gray-500/30';
-  };
-
-  const getStarRating = (level: string) => {
-    switch (level) {
-      case 'Expert':
-        return 5;
-      case 'Advanced':
-        return 4;
-      case 'Intermediate':
-        return 3;
-      case 'Beginner':
-        return 2;
-      default:
-        return 5;
-    }
-  };
-
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        className={`w-4 h-4 ${
-          i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-600'
-        }`}
-      />
-    ));
   };
 
   const skillCategories = skills.reduce((acc, skill) => {
@@ -65,21 +38,10 @@ const SkillsSection = () => {
                 </span>
               </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {categorySkills.map((skill) => (
-                  <div key={skill.id} className="bg-gray-900 p-6 rounded-lg border border-gray-700 hover:shadow-lg hover:border-purple-500/50 transition-all animate-scale-in">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
-                      <span className="text-sm text-purple-400 font-medium">{skill.level}</span>
-                    </div>
-                    
-                    <div className="flex items-center gap-1 mb-3">
-                      {renderStars(getStarRating(skill.level))}
-                      <span className="text-sm text-gray-400 ml-2">
-                        {getStarRating(skill.level)}/5
-                      </span>
-                    </div>
-                    
+                  <div key={skill.id} className="bg-gray-900 p-4 rounded-lg border border-gray-700 hover:shadow-lg hover:border-purple-500/50 transition-all animate-scale-in">
+                    <h3 className="text-lg font-semibold text-white mb-2">{skill.name}</h3>
                     <p className="text-sm text-gray-400 leading-relaxed">{skill.description}</p>
                   </div>
                 ))}
