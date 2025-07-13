@@ -4,7 +4,7 @@ import fs from 'fs';
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
   try {
-    const resumePath = path.join(process.cwd(), 'attached_assets', 'saumitra_kulkarni_14_july_25_1752442277855.pdf');
+    const resumePath = path.join(process.cwd(), 'dist', 'public', 'resume.pdf');
 
     if (!fs.existsSync(resumePath)) {
       return res.status(404).json({ message: 'Resume not found' });

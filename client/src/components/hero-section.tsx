@@ -32,7 +32,7 @@ const HeroSection = () => {
           {/* Professional headshot */}
           <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 shadow-lg p-1">
                         <img
-              src="/attached_assets/Saumitra%20Photo_1752443666927.jpeg"
+              src="/profile-photo.jpeg"
               alt="Saumitra Kulkarni"
               className="w-full h-full rounded-full object-cover"
               onError={(e) => {
