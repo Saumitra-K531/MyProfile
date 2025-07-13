@@ -4,14 +4,14 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "functions": {
-    "server/index.ts": {
+    "api/*.ts": {
       "includeFiles": "attached_assets/**"
     }
   },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/index.ts"
+      "dest": "/api/$1"
     },
     {
       "src": "/attached_assets/(.*)",
