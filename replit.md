@@ -17,7 +17,7 @@ Design preference: Clean, minimalist layout similar to Tania Rascia's portfolio.
 - Enhanced experience section with better bullet point design using bordered cards and grouped achievements
 - Restored skills section with star rating system (1-5 stars) for skill proficiency levels
 - Applied dark theme to all sections (navigation, experience, skills, education, projects, publications, contact)
-- Updated color scheme: dark gray backgrounds with purple/pink accents
+- Updated color scheme: dark gray backgrounds with subtle slate accents (reduced from purple/pink for better subtlety)
 - Improved visual hierarchy with better contrast and hover effects
 - Enhanced user experience with smooth animations and transitions
 - Updated navigation with all sections restored (Home, Experience, Skills, Education, Projects, Publications, Contact)

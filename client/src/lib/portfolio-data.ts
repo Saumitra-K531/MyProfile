@@ -21,12 +21,14 @@ export const experiences: Experience[] = [
     endDate: "Present",
     description: "Part of the Nutanix \"Move\" product team, focusing on migrating VMs and files from various environments to Nutanix solutions.",
     achievements: [
-      "Engineered critical vSwitch conversion system for ESXi-to-AHV migrations with zero-downtime",
-      "Delivered IPv6 support for 20+ government and enterprise customers",
-      "Designed centralized orchestration for 17+ Dockerized components",
-      "Developed Hyper-V to AHV migration features for 15% of customers",
-      "Added vTPM device support for secure VM transitions",
-      "Reduced manual operational overhead by 70%"
+      "Engineered a critical vSwitch conversion system as part of in-place ESXi-to-AHV cluster conversions, orchestrating seamless hypervisor migration on existing hardware with multiple distributed vSwitch reconfiguration, including coordinated rolling restarts, to enable zero-downtime network transitions and eliminate maintenance windows for production workloads.",
+      "Delivered IPv6 support in Nutanix Move, enabling cross-platform VM migrations with static IPv6 addressing; solved a critical ask from 20+ government and enterprise customers and enhanced product readiness for IPv6 adoption.",
+      "Designed and implemented a centralized service orchestration system for 17+ Dockerized components in Nutanix Move, enabling API-driven lifecycle management (START/STOP/RESTART) without appliance access—cut manual operational overhead by 70%.",
+      "Developed the following key features for Hyper-V to AHV migration path, used by around 15% of our customers:",
+      "• Custom Port for Hyper-V Agent: Enabled the Hyper-V agent to run on a custom port, providing greater flexibility and control during migrations",
+      "• vTPM Device Support: Added support for migrating VMs with attached vTPM devices, ensuring secure and seamless transitions from Hyper-V to AHV environments.",
+      "Collaborated with the security team to address critical vulnerabilities in key packages and containers.",
+      "Resolved significant customer-reported defects, including disk ordering issues, network restoration problems, and kernel panic incidents after VM migrations."
     ],
     technologies: ["Python", "Golang", "Docker", "Kubernetes", "VMware", "Hyper-V"],
     icon: "cloud"
@@ -40,12 +42,13 @@ export const experiences: Experience[] = [
     endDate: "Aug 2023",
     description: "Worked on Project Hydra to streamline authentication services and support multi-region deployment.",
     achievements: [
-      "Migrated 15,000 customers to global service within 5 minutes",
-      "Achieved 10x faster performance for bulk listing APIs",
-      "Developed Python SDK for global service based on SOA architecture",
-      "Implemented MSP customer single sign-on for security compliance",
-      "Added middleware layer for REST server framework",
-      "Increased code coverage by 50% with enhanced UT mocker"
+      "Project Hydra: Streamlined and integrated the monolithic authentication service with global services to support multi-region deployment. Transferred CRUD workflows for customer and license management from the monolith authentication service to the global customer service.",
+      "Worked on low-level design for MSP customer's single sign-on to accomplish critical security compliance requirements for administrator login.",
+      "Achieved migration of around 15000 customers and license entities to global service within 5 mins using threading and batching mechanism with idempotency with python script.",
+      "Optimized existing bulk listing APIs to achieve 10 times faster performance across the Druva Products ecosystem.",
+      "Added a middleware layer in REST server framework to execute pre/post API request tasks.",
+      "Developed a python SDK for global service based on SOA architecture as a microservice consumable.",
+      "Evolved UT mocker with the ability to mock event-driven framework (AWS SQS and SNS mechanism) for Unit Testing, increased the code coverage by 50 percent."
     ],
     technologies: ["Python", "AWS", "SQS", "SNS", "REST API", "Microservices"],
     icon: "shield-alt"
@@ -59,9 +62,10 @@ export const experiences: Experience[] = [
     endDate: "Nov 2021",
     description: "Focused on S3 services optimization and CORTX intelligent object storage system development.",
     achievements: [
-      "Implemented graceful shutdown for S3 services to reduce operation failures",
-      "Developed PoCs for migrating S3 components to Kubernetes",
-      "Enhanced benchmarking tools and metadata dumping capabilities"
+      "Implemented a feature to shut down s3 services gracefully, to reduce read/write operation failures and increase HA",
+      "PoCs and development support to migrate s3server components from RedHat PCS cluster to Kubernetes environment",
+      "Completed PoC to deploy OpenLDAP database (stateful service) in PCS cluster and K8s environment",
+      "Improvised various phases in MINI-PROVISIONING for s3server component of CORTX - Intelligent Object storage system in python and shell."
     ],
     technologies: ["Python", "Kubernetes", "S3", "CORTX", "OpenLDAP"],
     icon: "database"
@@ -75,8 +79,9 @@ export const experiences: Experience[] = [
     endDate: "June 2021",
     description: "Worked on high availability and load balancing solutions for cluster systems.",
     achievements: [
-      "Developed PoCs on high availability using HaProxy, KeepAlived, CTDB",
-      "Enhanced s3bench tool for read/write/delete operations validation"
+      "Worked on PoCs on high availability and load balancing for the cluster to reduce the downtime and increase availability - HaProxy, KeepAlived, CTDB.",
+      "Added enhancement to benchmarking tools like s3bench to validate read/write/delete operations.",
+      "Enhanced a metadata dumping tool for s3 buckets and objects in MOTR component."
     ],
     technologies: ["Python", "HaProxy", "KeepAlived", "CTDB", "Load Balancing"],
     icon: "graduation-cap"
