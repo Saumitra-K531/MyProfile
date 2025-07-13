@@ -1,32 +1,20 @@
-import { GraduationCap, School, Award, Calendar, MapPin, Star } from 'lucide-react';
+import { GraduationCap, Award, MapPin } from 'lucide-react';
 import { education } from '@/lib/portfolio-data';
 
 const EducationSection = () => {
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'graduation-cap':
-        return <GraduationCap className="text-white text-2xl" />;
-      case 'school':
-        return <School className="text-white" />;
-      case 'certificate':
-        return <Award className="text-white" />;
-      default:
-        return <GraduationCap className="text-white text-2xl" />;
+  const getGradeColor = (grade: string) => {
+    if (grade.includes('8.') || grade.includes('9.')) {
+      return 'bg-green-100 text-green-800';
+    } else if (grade.includes('7.')) {
+      return 'bg-blue-100 text-blue-800';
+    } else if (grade.includes('6.')) {
+      return 'bg-yellow-100 text-yellow-800';
     }
-  };
-
-  const getIconColor = (index: number) => {
-    const colors = ['bg-primary', 'bg-accent', 'bg-secondary'];
-    return colors[index % colors.length];
-  };
-
-  const getTextColor = (index: number) => {
-    const colors = ['text-primary', 'text-accent', 'text-secondary'];
-    return colors[index % colors.length];
+    return 'bg-purple-100 text-purple-800';
   };
 
   return (
-    <section id="education" className="py-20 bg-white">
+    <section id="education" className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-800 mb-4">Education</h2>
@@ -35,33 +23,49 @@ const EducationSection = () => {
         
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
-            {education.map((edu, index) => (
-              <div key={edu.id} className="bg-slate-50 p-8 rounded-lg hover:shadow-lg transition-shadow animate-scale-in">
-                <div className="flex items-center mb-4">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mr-6 ${getIconColor(index)}`}>
-                    {getIcon(edu.icon)}
+            {education.map((edu) => (
+              <div key={edu.id} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow animate-scale-in">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <GraduationCap className="text-white text-2xl" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-800">{edu.degree}</h3>
-                    {edu.field && (
-                      <p className={`font-semibold ${getTextColor(index)}`}>{edu.field}</p>
+                  
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-slate-800">{edu.degree}</h3>
+                        <p className="text-xl text-purple-600 font-semibold">{edu.institution}</p>
+                        <div className="flex items-center gap-2 mt-2">
+                          <MapPin className="w-4 h-4 text-slate-500" />
+                          <span className="text-slate-500">{edu.location}</span>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-slate-500">{edu.year}</p>
+                        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getGradeColor(edu.grade)}`}>
+                          {edu.grade}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-slate-700 mb-4">{edu.description}</p>
+                    
+                    {edu.achievements && edu.achievements.length > 0 && (
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-slate-800 flex items-center gap-2">
+                          <Award className="w-4 h-4 text-yellow-500" />
+                          Key Achievements
+                        </h4>
+                        <ul className="space-y-1">
+                          {edu.achievements.map((achievement, index) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-slate-600">{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
-                    <p className="text-slate-600">{edu.institution}</p>
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-4 mt-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar className={`w-5 h-5 ${getTextColor(index)}`} />
-                    <span className="text-slate-600">{edu.startYear} - {edu.endYear}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className={`w-5 h-5 ${getTextColor(index)}`} />
-                    <span className="text-slate-600">{edu.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Star className="w-5 h-5 text-yellow-500" />
-                    <span className="text-slate-600 font-semibold">{edu.grade}</span>
                   </div>
                 </div>
               </div>
