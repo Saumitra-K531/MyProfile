@@ -24,9 +24,7 @@ export const experiences: Experience[] = [
       "Engineered a critical vSwitch conversion system as part of in-place ESXi-to-AHV cluster conversions, orchestrating seamless hypervisor migration on existing hardware with multiple distributed vSwitch reconfiguration, including coordinated rolling restarts, to enable zero-downtime network transitions and eliminate maintenance windows for production workloads.",
       "Delivered IPv6 support in Nutanix Move, enabling cross-platform VM migrations with static IPv6 addressing; solved a critical ask from 20+ government and enterprise customers and enhanced product readiness for IPv6 adoption.",
       "Designed and implemented a centralized service orchestration system for 17+ Dockerized components in Nutanix Move, enabling API-driven lifecycle management (START/STOP/RESTART) without appliance access—cut manual operational overhead by 70%.",
-      "Developed the following key features for Hyper-V to AHV migration path, used by around 15% of our customers:",
-      "• Custom Port for Hyper-V Agent: Enabled the Hyper-V agent to run on a custom port, providing greater flexibility and control during migrations",
-      "• vTPM Device Support: Added support for migrating VMs with attached vTPM devices, ensuring secure and seamless transitions from Hyper-V to AHV environments.",
+      "Developed the following key features for Hyper-V to AHV migration path, used by around 15% of our customers:\n  • Custom Port for Hyper-V Agent: Enabled the Hyper-V agent to run on a custom port, providing greater flexibility and control during migrations\n  • vTPM Device Support: Added support for migrating VMs with attached vTPM devices, ensuring secure and seamless transitions from Hyper-V to AHV environments",
       "Collaborated with the security team to address critical vulnerabilities in key packages and containers.",
       "Resolved significant customer-reported defects, including disk ordering issues, network restoration problems, and kernel panic incidents after VM migrations."
     ],
@@ -134,7 +132,7 @@ export const skills: Skill[] = [
   { id: 4, category: "Languages", name: "JavaScript", level: 3, icon: "js" },
   { id: 5, category: "Languages", name: "Java", level: 3, icon: "java" },
   { id: 6, category: "Languages", name: "SQL", level: 4, icon: "database" },
-  
+
   // Technologies
   { id: 7, category: "Technologies", name: "Linux", level: 5, icon: "linux" },
   { id: 8, category: "Technologies", name: "MySQL", level: 4, icon: "database" },
@@ -144,7 +142,7 @@ export const skills: Skill[] = [
   { id: 12, category: "Technologies", name: "Redis", level: 3, icon: "memory" },
   { id: 13, category: "Technologies", name: "Flask", level: 4, icon: "flask" },
   { id: 14, category: "Technologies", name: "Networking", level: 4, icon: "network-wired" },
-  
+
   // Tools
   { id: 15, category: "Tools", name: "Git", level: 5, icon: "git-alt" },
   { id: 16, category: "Tools", name: "JIRA", level: 4, icon: "jira" },

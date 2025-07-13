@@ -29,7 +29,7 @@ const ExperienceSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4">Work Experience</h2>
           <p className="text-lg text-gray-400">5+ years of professional software development experience</p>
         </div>
-        
+
         <div className="max-w-4xl mx-auto">
           <div className="experience-timeline relative">
             {experiences.map((exp, index) => (
@@ -46,22 +46,31 @@ const ExperienceSection = () => {
                     <p className="text-gray-400">{exp.startDate} - {exp.endDate}</p>
                   </div>
                 </div>
-                
+
                 <div className="ml-18 bg-gray-800 p-6 rounded-lg border border-gray-700">
                   <p className="text-gray-300 mb-6">{exp.description}</p>
-                  
+
                   <div className="space-y-3">
                     <h4 className="text-lg font-semibold text-purple-400 mb-4">Key Achievements</h4>
                     <div className="grid gap-3">
-                      {exp.achievements?.map((achievement, i) => (
-                        <div key={i} className="flex items-start gap-3 p-3 bg-gray-700/50 rounded-lg border-l-4 border-purple-500">
-                          <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                          <p className="text-gray-300 leading-relaxed">{achievement}</p>
-                        </div>
-                      ))}
+                      {exp.achievements?.map((achievement, i) => {
+                        if (!achievement) return null;
+                        return (
+                          <div key={i} className="flex items-start gap-3 p-3 bg-gray-700/50 rounded-lg border-l-4 border-purple-500">
+                            <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                            <div className="text-gray-300 leading-relaxed">
+                              {achievement.split('\n').map((line, lineIndex) => (
+                                <div key={lineIndex} className={lineIndex > 0 ? 'mt-2' : ''}>
+                                  {line}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
-                  
+
                   {exp.technologies && (
                     <div className="mt-6 pt-4 border-t border-gray-600">
                       <h4 className="text-sm font-semibold text-purple-400 mb-3">Technologies Used</h4>

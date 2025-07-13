@@ -2,8 +2,12 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import path from "path";
+import express from "express";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve static files from attached_assets directory
+  app.use('/attached_assets', express.static(path.join(process.cwd(), 'attached_assets')));
+
   // Serve the resume PDF file
   app.get('/api/resume', (req, res) => {
     const resumePath = path.join(process.cwd(), 'attached_assets', 'saumitra_kulkarni_14_july_25_1752442277855.pdf');

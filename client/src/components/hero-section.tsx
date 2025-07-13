@@ -30,10 +30,10 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="animate-fade-in">
           {/* Professional headshot */}
-          <div className="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 shadow-lg p-1">
-            <img 
-              src="/attached_assets/Saumitra Photo_1752443666927.jpeg" 
-              alt="Saumitra Kulkarni" 
+          <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 shadow-lg p-1">
+                        <img
+              src="/attached_assets/Saumitra%20Photo_1752443666927.jpeg"
+              alt="Saumitra Kulkarni"
               className="w-full h-full rounded-full object-cover"
               onError={(e) => {
                 // Fallback to initials if image fails to load
@@ -46,20 +46,20 @@ const HeroSection = () => {
               <span className="text-white text-4xl font-bold">SK</span>
             </div>
           </div>
-          
+
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             <span className="gradient-text">{personalInfo.name}</span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
             {personalInfo.title} at{' '}
             <span className="text-slate-400 font-semibold">{personalInfo.company}</span>
           </p>
-          
+
           <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
             {personalInfo.summary}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <div className="flex items-center gap-2 text-gray-300">
               <Mail className="w-5 h-5 text-purple-400" />
@@ -69,7 +69,7 @@ const HeroSection = () => {
               <Phone className="w-5 h-5 text-purple-400" />
               <span>{personalInfo.phone}</span>
             </div>
-            <a 
+            <a
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
@@ -81,16 +81,16 @@ const HeroSection = () => {
               <span>LinkedIn Profile</span>
             </a>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               onClick={scrollToExperience}
               className="inline-flex items-center gap-2 bg-slate-700 text-white px-8 py-3 rounded-lg hover:bg-slate-600 transition-colors"
             >
               <Briefcase className="w-5 h-5" />
               View Experience
             </Button>
-            <Button 
+            <Button
               onClick={downloadResume}
               variant="outline"
               className="inline-flex items-center gap-2 border-2 border-slate-600 text-slate-400 px-8 py-3 rounded-lg hover:bg-slate-600 hover:text-white transition-colors"
